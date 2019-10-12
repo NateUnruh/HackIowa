@@ -2,19 +2,19 @@ import com.mapbox.geojson.Point;
 import com.mapbox.turf.TurfConstants;
 import com.mapbox.turf.TurfMeasurement;
 
+import java.util.ArrayList;
+
 public class Drone{
     private double mph = 60.0;
     private Point homeCoords;
     private Point coords;
-    private double batteryRange = 25;
+    private double batteryRange;
     private double batteryLife;
     private MedPack medPack = new MedPack(0);
     private boolean home = false;
     private double maxPayLoad = 5; //measured in pounds
-    private double operatingTempLow = 0;
-    private double operatingTempHigh = 0;
-    private final Point LeftBot = Point.fromLngLat(41.629109, -91.611807);
-    private final Point RightTop = Point.fromLngLat(41.693394, -91.462394);
+    private final Point LeftBot = Point.fromLngLat(41.629109, -91.611807); //Left Bottom Corner of Box
+    private final Point RightTop = Point.fromLngLat(41.693394, -91.462394); //Right Top Corner of Box
 
     Drone(Point homeCoords, double mph, double batteryRange, double maxPayLoad){
         this.homeCoords = homeCoords;
@@ -39,8 +39,8 @@ public class Drone{
         this.home = true;
         this.mph = mph;
         this.maxPayLoad = maxPayLoad;
-        this.operatingTempLow = operatingTempLow;
-        this.operatingTempHigh = operatingTempHigh;
+//        this.operatingTempLow = operatingTempLow;
+//        this.operatingTempHigh = operatingTempHigh;
         this.batteryRange = batteryRange;
         this.batteryLife = batteryRange;
     }
@@ -85,13 +85,13 @@ public class Drone{
         return maxPayLoad;
     }
 
-    public double getOperatingTempLow() {
-        return operatingTempLow;
-    }
-
-    public double getOperatingTempHigh() {
-        return operatingTempHigh;
-    }
+//    public double getOperatingTempLow() {
+//        return operatingTempLow;
+//    }
+//
+//    public double getOperatingTempHigh() {
+//        return operatingTempHigh;
+//    }
 
     public double getMph() {
         return mph;
@@ -141,13 +141,13 @@ public class Drone{
         this.maxPayLoad = maxPayLoad;
     }
 
-    public void setOperatingTempLow(double operatingTempLow) {
-        this.operatingTempLow = operatingTempLow;
-    }
-
-    public void setOperatingTempHigh(double operatingTempHigh) {
-        this.operatingTempHigh = operatingTempHigh;
-    }
+//    public void setOperatingTempLow(double operatingTempLow) {
+//        this.operatingTempLow = operatingTempLow;
+//    }
+//
+//    public void setOperatingTempHigh(double operatingTempHigh) {
+//        this.operatingTempHigh = operatingTempHigh;
+//    }
 
     //
     public void move(Point dest){
@@ -160,7 +160,11 @@ public class Drone{
 
     //testing main
     public static void main(String[] args){
-        Drone d = new Drone(Point.fromLngLat(-91.532788,41.651897),new MedPack(2));
-        System.out.println(d.timeToArrival(Point.fromLngLat(-91.5192,41.6765)));
+//        Drone d = new Drone(Point.fromLngLat(-91.532788,41.651897),new MedPack(2));
+        DroneForce Array = new DroneForce();
+        ArrayList<Drone> ArrayList = Array.getDronesList();
+        for(Drone drone : ArrayList) {
+            System.out.println(drone.timeToArrival(Point.fromLngLat(-91.5192, 41.6765)));
+        }
     }
 }
