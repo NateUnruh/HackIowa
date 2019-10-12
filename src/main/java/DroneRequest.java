@@ -40,7 +40,10 @@ public class DroneRequest {
         return closest;
     }
 
-    private Drone closestDrone(Point dest, int type){
+    // Find closest available drone that can make it there and back and has relevant med pack.
+    private Drone closestDrone(PatientRequest request){
+        Point dest = request.getLocation();
+        int type = request.getType();
         double time = Double.MAX_VALUE;
         Drone closest = null;
         for(Drone i : Drones){
@@ -65,18 +68,20 @@ public class DroneRequest {
 
 
 
+    // TODO: Iowa City bounding box
     public static void main(String [] args){
-        Point request = Point.fromLngLat(5,5);
+        Point dest = Point.fromLngLat(5,5);
+        PatientRequest request = new PatientRequest(dest,0);
 
         DroneRequest d = new DroneRequest(Point.fromLngLat(0,0),Point.fromLngLat(10,10), 10);
         for(Drone i : d.Drones){
-            System.out.println(i.getCoords() + " Distance: " + i.distanceTo(request) + " Type of medPack: " + i.getMedPack().getPackageNum());
+            System.out.println(i.getCoords() + " Distance: " + i.distanceTo(request.getLocation()) + " Type of medPack: " + i.getMedPack().getPackageNum());
         }
 
 
-        Drone closest = d.closestDrone(request,0);
+        Drone closest = d.closestDrone(request);
         System.out.println("Closest");
-        System.out.println(closest.getCoords() + " Distance: " + closest.distanceTo(request));
+        System.out.println(closest.getCoords() + " Distance: " + closest.distanceTo(request.getLocation()));
 
     }
 }
