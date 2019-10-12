@@ -23,7 +23,9 @@ public class PatientRequest {
         this.type = 0;
     }
     PatientRequest(String request){
+
         MapboxGeocoding mapboxGeocoding = MapboxGeocoding.builder().accessToken(accessToken).query(request).build();
+
         mapboxGeocoding.enqueueCall(new Callback<GeocodingResponse>() {
             @Override
             public void onResponse(retrofit2.Call<GeocodingResponse> call, Response<GeocodingResponse> response) {
@@ -33,7 +35,9 @@ public class PatientRequest {
 
                     // Log the first results Point.
                     Point firstResultPoint = results.get(0).center();
+                    System.out.println(firstResultPoint);
                     location = firstResultPoint;
+                    System.out.println(location);
 
                 } else {
 
@@ -62,7 +66,7 @@ public class PatientRequest {
 
                     // Log the first results Point.
                     Point firstResultPoint = results.get(0).center();
-                    location = firstResultPoint;
+                    System.out.println(firstResultPoint);
 
                 } else {
 
@@ -88,5 +92,13 @@ public class PatientRequest {
         return type;
     }
 
+    public void setLocation(Point point){
+        this.location = point;
+    }
+
+    public static void main(String[] args){
+        PatientRequest p = new PatientRequest("707 S Dubuque St Iowa City, IA");
+        System.out.println(p.getLocation());
+    }
 
 }

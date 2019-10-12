@@ -34,8 +34,8 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 dispose();
                 JOptionPane.showMessageDialog(null,"Your Help is on the way! Hold it there",null,JOptionPane.PLAIN_MESSAGE);
-               // PatientRequest address = new PatientRequest(Location.getText());
-
+                PatientRequest address = new PatientRequest(Location.getText());
+                System.out.println(address.getLocation());
             }
         });
 
