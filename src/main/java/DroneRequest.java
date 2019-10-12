@@ -11,8 +11,7 @@ public class DroneRequest extends DroneForce{
     private Point leftBot;
     private Point rightTop;
     DroneRequest(Point leftBot, Point rightTop, int numDrones){
-        DroneForce temp = null;
-        Drones = temp.getDronesList();
+        Drones = new DroneForce().getDronesList();
         // Drones.add(DroneForce.AmazonAirPrime);
 //        for(int i = 0; i < numDrones; i++){
 //            double longitude = ThreadLocalRandom.current().nextDouble(leftBot.longitude(),rightTop.longitude());
@@ -72,7 +71,7 @@ public class DroneRequest extends DroneForce{
 
     // TODO: Iowa City bounding box
     public static void main(String [] args){
-        Point dest = Point.fromLngLat(5,5);
+        Point dest = Point.fromLngLat(-91.55,41.65);
         PatientRequest request = new PatientRequest(dest,0);
 
         DroneRequest d = new DroneRequest(Point.fromLngLat(0,0),Point.fromLngLat(10,10), 10);

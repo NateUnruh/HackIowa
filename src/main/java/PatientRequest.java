@@ -6,6 +6,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 public class PatientRequest {
@@ -35,9 +39,7 @@ public class PatientRequest {
 
                     // Log the first results Point.
                     Point firstResultPoint = results.get(0).center();
-                    System.out.println(firstResultPoint);
-                    location = firstResultPoint;
-                    System.out.println(location);
+                    location = Point.fromLngLat(firstResultPoint.longitude(),firstResultPoint.latitude());
 
                 } else {
 
@@ -52,6 +54,7 @@ public class PatientRequest {
                 throwable.printStackTrace();
             }
         });
+        System.out.println(mapboxGeocoding.toString());
 
     }
 
@@ -66,7 +69,14 @@ public class PatientRequest {
 
                     // Log the first results Point.
                     Point firstResultPoint = results.get(0).center();
-                    System.out.println(firstResultPoint);
+                    BufferedWriter out = null;
+                    try {
+                        out = new BufferedWriter(new FileWriter("src/main/request.txt"));
+                        out.write(Double.toString(firstResultPoint.latitude()));
+                        out.write(Double.toString(firstResultPoint.longitude()));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                 } else {
 

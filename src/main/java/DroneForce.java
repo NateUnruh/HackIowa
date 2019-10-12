@@ -22,7 +22,7 @@ public class DroneForce {
     private final Point FireStation4 = Point.fromLngLat(41.680848, -91.507113);
 
 
-    ArrayList DroneFore(){
+    public DroneForce(){
         double MatriceMph = 40.0;
         double MatriceBatteryRange = 18.0;
         double MatriceMaxPayLoad = 12.1254;
@@ -31,6 +31,7 @@ public class DroneForce {
         double InspireBatteryRange = 27.0;
         double InspireMaxPayLoad = 2.0;
 
+        DronesList = new ArrayList<>();
         //Drone(Point homeCoords, double mph, double batteryRange, double maxPayLoad)
         /* Adding DJI Matrice 600 Pro Drones*/
         DronesList.add(new Drone(MercyH, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
@@ -63,8 +64,6 @@ public class DroneForce {
         DronesList.add(new Drone(UIowaPolice, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
         DronesList.add(new Drone(ICPolice, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
         DronesList.add(new Drone(FireStation4, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
-
-        return DronesList;
     }
 
     public ArrayList<Drone> getDronesList() {
