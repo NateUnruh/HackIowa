@@ -8,7 +8,7 @@ public class Drone{
     private Point coords;
     private double batteryRange = 25;
     private double batteryLife;
-    private MedPack medPack;
+    private MedPack medPack = new MedPack(0);
     private boolean home = false;
     private double maxPayLoad = 5; //measured in pounds
     private double operatingTempLow = 0;
@@ -16,6 +16,15 @@ public class Drone{
     private final Point LeftBot = Point.fromLngLat(41.629109, -91.611807);
     private final Point RightTop = Point.fromLngLat(41.693394, -91.462394);
 
+    Drone(Point homeCoords, double mph, double batteryRange, double maxPayLoad){
+        this.homeCoords = homeCoords;
+        this.coords = homeCoords;
+        this.mph = mph;
+        this.batteryRange = batteryRange;
+        this.batteryLife = batteryRange;
+        this.maxPayLoad = maxPayLoad;
+        this.home = true;
+    }
 
     Drone(Point coords, MedPack medPack){
         this.homeCoords = coords;
