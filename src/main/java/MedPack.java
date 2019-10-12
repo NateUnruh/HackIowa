@@ -20,6 +20,7 @@ public class MedPack
             PackItem blanket = new PackItem("Thermal Blanket", 0,0);
             PackItem gloves = new PackItem("Non-Latex Gloves",0,0);
         }
+
     };
 
     private final static ArrayList<PackItem> pack0Items = new ArrayList<PackItem>(){
