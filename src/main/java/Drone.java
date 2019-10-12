@@ -46,6 +46,35 @@ public class Drone {
         return coords;
     }
 
+    public double getMaxPayLoad() {
+        return maxPayLoad;
+    }
+
+    public double getOperatingTempLow() {
+        return operatingTempLow;
+    }
+
+    public double getOperatingTempHigh() {
+        return operatingTempHigh;
+    }
+
+    public double getMph() {
+        return mph;
+    }
+
+    public double getBatteryLife() {
+        return batteryLife;
+    }
+
+    public MedPack getMedPack() {
+        return medPack;
+    }
+
+    public boolean isHome() {
+        return home;
+    }
+
+
     //
     public void move(Point dest){
         home = false;
