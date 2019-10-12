@@ -5,10 +5,14 @@ import com.mapbox.turf.TurfMeasurement;
 public class Drone {
     private static final double mph = 60.0;
     private Point coords;
+    private double batteryLife;
     private MedPack medPack;
+    private boolean home;
     Drone(Point coords, MedPack medPack){
         this.coords = coords;
         this.medPack = medPack;
+        this.batteryLife = 25;
+        this.home = true;
     }
 
     // TODO: Change to call coords
@@ -17,10 +21,18 @@ public class Drone {
         return TurfMeasurement.distance(coords,dest, TurfConstants.UNIT_MILES);
     }
 
+
     // TODO: Change to call coords
     public double timeToArrival(Point dest){
         // fuck off Addison
         return (distanceTo(dest) / mph) * 60 + 1;
+    }
+
+    //
+    public void move(Point dest){
+        home = false;
+        batteryLife -= distanceTo(dest);
+        this.coords = dest;
     }
 
     public static void main(String[] args){
