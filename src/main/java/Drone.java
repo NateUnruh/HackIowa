@@ -24,7 +24,7 @@ public class Drone {
     }
 
     public static void main(String[] args){
-        Drone d = new Drone(Point.fromLngLat(3.6,5.4),new MedPack());
-        System.out.println(d.timeToArrival(Point.fromLngLat(3.9,5.5)));
+        Drone d = new Drone(Point.fromLngLat(41.651897,-91.532788),new MedPack());
+        System.out.println(d.timeToArrival(Point.fromLngLat(41.676522,-91.518468)));
     }
 }
