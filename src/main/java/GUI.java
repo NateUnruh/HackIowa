@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JOptionPane;
 
 public class GUI extends JFrame {
     private JLabel label1;
@@ -27,6 +28,16 @@ public class GUI extends JFrame {
         panel.add(label2);
         panel.add(PackType);
         panel.add(Send);
+
+        Send.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                dispose();
+                JOptionPane.showMessageDialog(null,"Your Help is on the way! Hold it there",null,JOptionPane.PLAIN_MESSAGE);
+               // PatientRequest address = new PatientRequest(Location.getText());
+
+            }
+        });
 
         add(panel);
     }
