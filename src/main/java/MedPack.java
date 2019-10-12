@@ -23,22 +23,41 @@ public class MedPack
 
     private final static ArrayList<PackItem> pack1Items = new ArrayList<PackItem>(){
         {
+
+        }
+    };
+
+    private final static ArrayList<PackItem> pack0Items = new ArrayList<PackItem>(){
+        {
             PackItem aed = new PackItem("AED", 0, 0);
         }
     };
 
+    public MedPack()
+    {
+        packageNum = 0;
+        contents.addAll(pack0Items);
+        contents.addAll(pack1Items);
+        contents.addAll(pack2Items);
+    }
+
     public MedPack(int packageNum)
     {
+        this.packageNum = packageNum;
         contents = new ArrayList<PackItem>();
         switch (packageNum)
         {
             case 0:
-
+                contents.addAll(pack0Items);
             case 1:
-
+                contents.addAll(pack1Items);
             case 2:
                 contents.addAll(pack2Items);
+                break;
             default:
+                contents.addAll(pack0Items);
+                contents.addAll(pack1Items);
+                contents.addAll(pack2Items);
                 break;
         }
     }
