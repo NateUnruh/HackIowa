@@ -13,4 +13,6 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:4.9.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-geojson:4.9.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:4.9.0'
 }
