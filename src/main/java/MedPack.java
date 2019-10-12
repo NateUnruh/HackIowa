@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class MedPack
 {
@@ -16,9 +14,11 @@ public class MedPack
             add(new PackItem("Hydrogen Peroxide",0,0));
             add(new PackItem("Instant Cold Compress",0,0));
             add(new PackItem("Gauze Pads",0,0));
-            add(new PackItem("Adhesive Bandages", 0,0));
+            add(new PackItem("Narcom", 0,0));
             add(new PackItem("Thermal Blanket", 0,0));
             add(new PackItem("Non-Latex Gloves",0,0));
+            add(new PackItem("Pain Killer",0,0));
+            add(new PackItem("Instructions Manual",0,0));
         }
     };
 

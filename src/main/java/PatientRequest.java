@@ -6,11 +6,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 public class PatientRequest {
     private Point location;
     private int type;
+    private double latitude;
+    private double longitude;
 
     private static final String accessToken = "pk.eyJ1IjoibmF0ZXVucnVoIiwiYSI6ImNrMW5tODU2ZDAyM2EzZHBmeWYzNW9oNWwifQ.wMcNUd8CHVB6c_DIv6lXHg";
     PatientRequest(Point location, int type){
@@ -35,9 +41,10 @@ public class PatientRequest {
 
                     // Log the first results Point.
                     Point firstResultPoint = results.get(0).center();
-                    System.out.println(firstResultPoint);
-                    location = firstResultPoint;
-                    System.out.println(location);
+                    location = Point.fromLngLat(firstResultPoint.longitude(),firstResultPoint.latitude());
+                    System.out.println("former"+location.latitude() + " " + location.longitude());
+                    latitude = location.latitude();
+                    longitude = location.longitude();
 
                 } else {
 
@@ -52,6 +59,7 @@ public class PatientRequest {
                 throwable.printStackTrace();
             }
         });
+        System.out.println(mapboxGeocoding.toString());
 
     }
 
@@ -66,7 +74,14 @@ public class PatientRequest {
 
                     // Log the first results Point.
                     Point firstResultPoint = results.get(0).center();
-                    System.out.println(firstResultPoint);
+                    BufferedWriter out = null;
+                    try {
+                        out = new BufferedWriter(new FileWriter("src/main/request.txt"));
+                        out.write(Double.toString(firstResultPoint.latitude()));
+                        out.write(Double.toString(firstResultPoint.longitude()));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                 } else {
 
@@ -74,6 +89,8 @@ public class PatientRequest {
                     throw new IllegalArgumentException("Invalid request.");
                 }
             }
+
+
 
 
             @Override
@@ -98,7 +115,7 @@ public class PatientRequest {
 
     public static void main(String[] args){
         PatientRequest p = new PatientRequest("707 S Dubuque St Iowa City, IA");
-        System.out.println(p.getLocation());
+        System.out.println("latter"+ p.latitude +" " + p.longitude);
     }
 
 }
