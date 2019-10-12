@@ -15,7 +15,7 @@ public class DroneRequest {
         for(int i = 0; i < numDrones; i++){
             double longitude = ThreadLocalRandom.current().nextDouble(leftBot.longitude(),rightTop.longitude());
             double latitude = ThreadLocalRandom.current().nextDouble(leftBot.latitude(),rightTop.latitude());
-            Drones.add(new Drone(Point.fromLngLat(longitude,latitude), new MedPack()));
+            Drones.add(new Drone(60,Point.fromLngLat(longitude,latitude), 1000, new MedPack()));
         }
     }
 
@@ -24,10 +24,15 @@ public class DroneRequest {
         double time = Double.MAX_VALUE;
         Drone closest = null;
         for(Drone i : Drones){
-            if(i.distanceTo(dest) < time){
-                closest = i;
-                time = closest.distanceTo(dest);
+            if(i.isHome()){
+                if(i.getBatteryLife() > i.distanceTo(dest)*2){
+                    if(i.distanceTo(dest) < time){
+                        closest = i;
+                        time = closest.distanceTo(dest);
+                    }
+                }
             }
+
         }
         if (time == Double.MAX_VALUE){
             throw new IllegalArgumentException("No drone available in bounding box (Iowa City).");
@@ -36,9 +41,9 @@ public class DroneRequest {
     }
 
     public static void main(String [] args){
-        Point request = Point.fromLngLat(45,15);
+        Point request = Point.fromLngLat(5,5);
 
-        DroneRequest d = new DroneRequest(Point.fromLngLat(0,0),Point.fromLngLat(150,41.685183), 10);
+        DroneRequest d = new DroneRequest(Point.fromLngLat(0,0),Point.fromLngLat(10,10), 10);
         for(Drone i : d.Drones){
             System.out.println(i.getCoords() + " Distance: " + i.distanceTo(request));
         }
