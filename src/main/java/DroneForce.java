@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class DroneForce {
 
-    private ArrayList<Drone> Drones;
+    private ArrayList<Drone> DronesList;
 
     private final Point MercyH = Point.fromLngLat(41.664240, -91.528365);
     private final Point UIowaHCRiverLanding = Point.fromLngLat(41.681955, -91.564041);
@@ -26,10 +26,48 @@ public class DroneForce {
         double MatriceMph = 40.0;
         double MatriceBatteryRange = 18.0;
         double MatriceMaxPayLoad = 12.1254;
+
+        double InspireMph = 58.0;
+        double InspireBatteryRange = 27.0;
+        double InspireMaxPayLoad = 2.0;
+
         //Drone(Point homeCoords, double mph, double batteryRange, double maxPayLoad)
         /* Adding DJI Matrice 600 Pro Drones*/
-        Drones.add(new Drone(MercyH, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(MercyH, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(UIowaHCRiverLanding, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(VAHospital, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(UIowaHospital, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(UHeightsPolice, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(FireStation2, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(CareAmbulance, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(ICPoliceSubstation, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(FireStation3, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(JohnsonAmbulance, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(JohnsonSherriffsOffice, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(UIowaPolice, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(ICPolice, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
+        DronesList.add(new Drone(FireStation4, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
 
-        return Drones;
+        /* Adding DJI Inspire 2 Drones*/
+        DronesList.add(new Drone(MercyH, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(UIowaHCRiverLanding, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(VAHospital, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(UIowaHospital, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(UHeightsPolice, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(FireStation2, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(CareAmbulance, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(ICPoliceSubstation, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(FireStation3, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(JohnsonAmbulance, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(JohnsonSherriffsOffice, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(UIowaPolice, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(ICPolice, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+        DronesList.add(new Drone(FireStation4, InspireMph, InspireBatteryRange, InspireMaxPayLoad));
+
+        return DronesList;
+    }
+
+    public ArrayList<Drone> getDronesList() {
+        return DronesList;
     }
 }

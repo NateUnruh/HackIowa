@@ -4,20 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class DroneRequest {
+public class DroneRequest extends DroneForce{
 
     private List<Drone> Drones;
 
     private Point leftBot;
     private Point rightTop;
     DroneRequest(Point leftBot, Point rightTop, int numDrones){
-        Drones = new ArrayList<>();
+        DroneForce temp = null;
+        Drones = temp.getDronesList();
         // Drones.add(DroneForce.AmazonAirPrime);
-        for(int i = 0; i < numDrones; i++){
-            double longitude = ThreadLocalRandom.current().nextDouble(leftBot.longitude(),rightTop.longitude());
-            double latitude = ThreadLocalRandom.current().nextDouble(leftBot.latitude(),rightTop.latitude());
-            Drones.add(new Drone(60,Point.fromLngLat(longitude,latitude), 1000, new MedPack(ThreadLocalRandom.current().nextInt(0,1+1))));
-        }
+//        for(int i = 0; i < numDrones; i++){
+//            double longitude = ThreadLocalRandom.current().nextDouble(leftBot.longitude(),rightTop.longitude());
+//            double latitude = ThreadLocalRandom.current().nextDouble(leftBot.latitude(),rightTop.latitude());
+//            Drones.add(new Drone(60,Point.fromLngLat(longitude,latitude), 1000, new MedPack(ThreadLocalRandom.current().nextInt(0,1+1))));
+//        }
     }
 
     // TODO: Add medpack validation
