@@ -6,7 +6,8 @@ public class Drone {
     private double mph = 60.0;
     private Point homeCoords;
     private Point coords;
-    private double batteryLife = 25;
+    private double batteryRange = 25;
+    private double batteryLife;
     private MedPack medPack;
     private boolean home = false;
     private double maxPayLoad = 5; //measured in pounds
@@ -21,7 +22,7 @@ public class Drone {
         this.home = true;
     }
 
-    Drone(Point coords, MedPack medPack, double mph, double maxPayLoad, double operatingTempLow, double operatingTempHigh, double batteryLife){
+    Drone(Point coords, MedPack medPack, double mph, double maxPayLoad, double operatingTempLow, double operatingTempHigh, double batteryRange){
         this.coords = coords;
         this.medPack = medPack;
         this.home = true;
@@ -29,16 +30,29 @@ public class Drone {
         this.maxPayLoad = maxPayLoad;
         this.operatingTempLow = operatingTempLow;
         this.operatingTempHigh = operatingTempHigh;
-        this.batteryLife = batteryLife;
+        this.batteryRange = batteryRange;
+        this.batteryLife = batteryRange;
     }
 
-    public Drone(double mph, Point homeCoords, double batteryLife, MedPack medPack) {
+    public Drone(double mph, Point homeCoords, double batteryRange, MedPack medPack) {
         this.mph = mph;
         this.home = true;
         this.coords = homeCoords;
         this.homeCoords = homeCoords;
-        this.batteryLife = batteryLife;
+        this.batteryRange= batteryRange;
+        this.batteryLife = batteryRange;
         this.medPack = medPack;
+    }
+
+    public Drone(double mph, Point homeCoords, double batteryRange){
+        this.mph = mph;
+        this.home = true;
+        this.coords = homeCoords;
+        this.homeCoords = homeCoords;
+        this.batteryRange = batteryRange;
+        this.batteryLife = batteryRange;
+
+
     }
 
     // TODO: Change to call coords

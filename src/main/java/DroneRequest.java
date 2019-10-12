@@ -40,6 +40,28 @@ public class DroneRequest {
         return closest;
     }
 
+    private Drone closestDrone(Point dest, int type){
+        double time = Double.MAX_VALUE;
+        Drone closest = null;
+        for(Drone i : Drones){
+            if(i.isHome()){
+                if(i.getBatteryLife() > i.distanceTo(dest)*2){
+                    if(i.distanceTo(dest) < time){
+                        closest = i;
+                        time = closest.distanceTo(dest);
+                    }
+                }
+            }
+
+        }
+        if (time == Double.MAX_VALUE){
+            throw new IllegalArgumentException("No drone available in bounding box (Iowa City).");
+        }
+        return closest;
+    }
+
+
+
     public static void main(String [] args){
         Point request = Point.fromLngLat(5,5);
 
