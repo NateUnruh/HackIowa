@@ -4,9 +4,6 @@ import com.mapbox.turf.TurfMeasurement;
 
 public class Drone {
     private double mph = 60.0;
-
-
-
     private Point coords;
     private double batteryLife = 25;
     private MedPack medPack;
