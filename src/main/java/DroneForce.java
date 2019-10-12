@@ -19,10 +19,15 @@ public class DroneForce {
     private final Point JohnsonSherriffsOffice = Point.fromLngLat(41.654967, -91.53640);
     private final Point UIowaPolice = Point.fromLngLat(41.658638, -91.535923);
     private final Point ICPolice = Point.fromLngLat(41.660262, -91.529752);
-    private final Point FireStation4 = Point.fromLngLat(41.680848, -91.507113;
+    private final Point FireStation4 = Point.fromLngLat(41.680848, -91.507113);
 
     ArrayList DroneFore(){
-        Drones.add(new Drone(new Point);
+        double MatriceMph = 40.0;
+        double MatriceBatteryRange = 18.0;
+        double MatriceMaxPayLoad = 12.1254;
+        //Drone(Point homeCoords, double mph, double batteryRange, double maxPayLoad)
+        /* Adding DJI Matrice 600 Pro Drones*/
+        Drones.add(new Drone(MercyH, MatriceMph, MatriceBatteryRange, MatriceMaxPayLoad));
 
         return Drones;
     }
