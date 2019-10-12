@@ -4,6 +4,9 @@ import com.mapbox.turf.TurfMeasurement;
 
 public class Drone {
     private double mph = 60.0;
+
+
+
     private Point coords;
     private double batteryLife = 25;
     private MedPack medPack;
@@ -40,6 +43,10 @@ public class Drone {
     public double timeToArrival(Point dest){
         // fuck off Addison
         return (distanceTo(dest) / mph) * 60 + 1;
+    }
+
+    public Point getCoords() {
+        return coords;
     }
 
     //
