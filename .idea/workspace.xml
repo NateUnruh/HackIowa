@@ -9,10 +9,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Drone.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Drone.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/DroneRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/DroneRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/MedPack.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/MedPack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Drone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DroneRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneRequest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -238,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570910004366</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Working on DroneRequests, closestDrone implemented. Needs medpack validation">
+      <created>1570910249658</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1570910249658</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

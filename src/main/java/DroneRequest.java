@@ -46,10 +46,13 @@ public class DroneRequest {
         for(Drone i : Drones){
             if(i.isHome()){
                 if(i.getBatteryLife() > i.distanceTo(dest)*2){
-                    if(i.distanceTo(dest) < time){
-                        closest = i;
-                        time = closest.distanceTo(dest);
+                    if(i.getMedPack().getPackageNum() <= type){
+                        if(i.distanceTo(dest) < time){
+                            closest = i;
+                            time = closest.distanceTo(dest);
+                        }
                     }
+
                 }
             }
 
@@ -67,11 +70,11 @@ public class DroneRequest {
 
         DroneRequest d = new DroneRequest(Point.fromLngLat(0,0),Point.fromLngLat(10,10), 10);
         for(Drone i : d.Drones){
-            System.out.println(i.getCoords() + " Distance: " + i.distanceTo(request));
+            System.out.println(i.getCoords() + " Distance: " + i.distanceTo(request) + " Type of medPack: " + i.getMedPack().getPackageNum());
         }
 
 
-        Drone closest = d.closestDrone(request);
+        Drone closest = d.closestDrone(request,0);
         System.out.println("Closest");
         System.out.println(closest.getCoords() + " Distance: " + closest.distanceTo(request));
 
