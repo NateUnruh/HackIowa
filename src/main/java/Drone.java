@@ -61,10 +61,8 @@ public class Drone {
         return TurfMeasurement.distance(coords,dest, TurfConstants.UNIT_MILES);
     }
 
-
     // TODO: Change to call coords
     public double timeToArrival(Point dest){
-        // fuck off Addison
         return (distanceTo(dest) / mph) * 60 + 1;
     }
 
@@ -100,6 +98,45 @@ public class Drone {
         return home;
     }
 
+    public void setMph(double mph) {
+        this.mph = mph;
+    }
+
+    public void setHomeCoords(Point homeCoords) {
+        this.homeCoords = homeCoords;
+    }
+
+    public void setCoords(Point coords) {
+        this.coords = coords;
+    }
+
+    public void setBatteryRange(double batteryRange) {
+        this.batteryRange = batteryRange;
+    }
+
+    public void setBatteryLife(double batteryLife) {
+        this.batteryLife = batteryLife;
+    }
+
+    public void setMedPack(MedPack medPack) {
+        this.medPack = medPack;
+    }
+
+    public void setHome(boolean home) {
+        this.home = home;
+    }
+
+    public void setMaxPayLoad(double maxPayLoad) {
+        this.maxPayLoad = maxPayLoad;
+    }
+
+    public void setOperatingTempLow(double operatingTempLow) {
+        this.operatingTempLow = operatingTempLow;
+    }
+
+    public void setOperatingTempHigh(double operatingTempHigh) {
+        this.operatingTempHigh = operatingTempHigh;
+    }
 
     //
     public void move(Point dest){
