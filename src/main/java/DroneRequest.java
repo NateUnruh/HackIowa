@@ -15,7 +15,7 @@ public class DroneRequest {
         for(int i = 0; i < numDrones; i++){
             double longitude = ThreadLocalRandom.current().nextDouble(leftBot.longitude(),rightTop.longitude());
             double latitude = ThreadLocalRandom.current().nextDouble(leftBot.latitude(),rightTop.latitude());
-            Drones.add(new Drone(60,Point.fromLngLat(longitude,latitude), 1000, new MedPack()));
+            Drones.add(new Drone(60,Point.fromLngLat(longitude,latitude), 1000, new MedPack(ThreadLocalRandom.current().nextInt(0,2+1))));
         }
     }
 

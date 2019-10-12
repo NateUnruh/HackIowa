@@ -112,7 +112,7 @@ public class Drone {
 
     //testing main
     public static void main(String[] args){
-        Drone d = new Drone(Point.fromLngLat(-91.532788,41.651897),new MedPack());
+        Drone d = new Drone(Point.fromLngLat(-91.532788,41.651897),new MedPack(2));
         System.out.println(d.timeToArrival(Point.fromLngLat(-91.5192,41.6765)));
     }
 }
