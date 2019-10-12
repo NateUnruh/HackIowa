@@ -2,7 +2,7 @@ import com.mapbox.geojson.Point;
 import com.mapbox.turf.TurfConstants;
 import com.mapbox.turf.TurfMeasurement;
 
-public class Drone {
+public class Drone{
     private double mph = 60.0;
     private Point homeCoords;
     private Point coords;
@@ -13,6 +13,8 @@ public class Drone {
     private double maxPayLoad = 5; //measured in pounds
     private double operatingTempLow = 0;
     private double operatingTempHigh = 0;
+    private final Point LeftBot = Point.fromLngLat(41.629109, -91.611807);
+    private final Point RightTop = Point.fromLngLat(41.693394, -91.462394);
 
 
     Drone(Point coords, MedPack medPack){
