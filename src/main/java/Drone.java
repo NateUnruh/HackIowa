@@ -3,7 +3,7 @@ import com.mapbox.turf.TurfConstants;
 import com.mapbox.turf.TurfMeasurement;
 
 public class Drone {
-    private static final double mph = 60;
+    private static final double mph = 60.0;
     private Point coords;
     private MedPack medPack;
     Drone(Point coords, MedPack medPack){
@@ -20,11 +20,11 @@ public class Drone {
     // TODO: Change to call coords
     public double timeToArrival(Point dest){
         // fuck off Addison
-        return (distanceTo(dest) / mph) * 60;
+        return (distanceTo(dest) / mph) * 60 + 1;
     }
 
     public static void main(String[] args){
-        Drone d = new Drone(Point.fromLngLat(41.651897,-91.532788),new MedPack());
-        System.out.println(d.timeToArrival(Point.fromLngLat(41.676522,-91.518468)));
+        Drone d = new Drone(Point.fromLngLat(-91.532788,41.651897),new MedPack());
+        System.out.println(d.timeToArrival(Point.fromLngLat(-91.5192,41.6765)));
     }
 }
