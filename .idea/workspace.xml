@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbd9e403-3201-42e4-809d-bfa2d3e0bb71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneForce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneForce.java" afterDir="false" />
-    </list>
+    <list default="true" id="bbd9e403-3201-42e4-809d-bfa2d3e0bb71" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PatientRequest">
+  <component name="RunManager" selected="Application.Drone">
     <configuration name="Drone" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Drone" />
       <module name="untitled.main" />
@@ -273,7 +271,28 @@
       <option name="project" value="LOCAL" />
       <updated>1570917198256</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed DroneForce">
+      <created>1570917639896</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1570917639896</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Fixed DroneForce">
+      <created>1570917682967</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1570917682967</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Almost done with Drones">
+      <created>1570922822027</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1570922822027</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +317,24 @@
     <MESSAGE value="Working on DroneRequests" />
     <MESSAGE value="Working on DroneRequests, closestDrone implemented. Needs medpack validation" />
     <MESSAGE value="Fixed Drone, Added Locations to DroneForce" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Drone, Added Locations to DroneForce" />
+    <MESSAGE value="Fixed DroneForce" />
+    <MESSAGE value="Almost done with Drones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost done with Drones" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DroneRequest.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DroneRequest.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

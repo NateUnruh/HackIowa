@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class DroneRequest {
+public class DroneRequest extends DroneForce{
 
     private List<Drone> Drones;
 
     private Point leftBot;
     private Point rightTop;
     DroneRequest(Point leftBot, Point rightTop, int numDrones){
-        Drones = new ArrayList<>();
+        Drones = new DroneForce().getDronesList();
         // Drones.add(DroneForce.AmazonAirPrime);
-        for(int i = 0; i < numDrones; i++){
-            double longitude = ThreadLocalRandom.current().nextDouble(leftBot.longitude(),rightTop.longitude());
-            double latitude = ThreadLocalRandom.current().nextDouble(leftBot.latitude(),rightTop.latitude());
-            Drones.add(new Drone(60,Point.fromLngLat(longitude,latitude), 1000, new MedPack(ThreadLocalRandom.current().nextInt(0,1+1))));
-        }
+//        for(int i = 0; i < numDrones; i++){
+//            double longitude = ThreadLocalRandom.current().nextDouble(leftBot.longitude(),rightTop.longitude());
+//            double latitude = ThreadLocalRandom.current().nextDouble(leftBot.latitude(),rightTop.latitude());
+//            Drones.add(new Drone(60,Point.fromLngLat(longitude,latitude), 1000, new MedPack(ThreadLocalRandom.current().nextInt(0,1+1))));
+//        }
     }
 
     // TODO: Add medpack validation
@@ -71,7 +71,7 @@ public class DroneRequest {
 
     // TODO: Iowa City bounding box
     public static void main(String [] args){
-        Point dest = Point.fromLngLat(5,5);
+        Point dest = Point.fromLngLat(-91.55,41.65);
         PatientRequest request = new PatientRequest(dest,0);
 
         DroneRequest d = new DroneRequest(Point.fromLngLat(0,0),Point.fromLngLat(10,10), 10);
