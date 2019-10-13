@@ -48,6 +48,10 @@ public class PatientRequestGoogleAPI {
         return location;
     }
 
+    public double timeToArrival(Drone d){
+        return d.timeToArrival(location);
+
+    }
     public int getType(){
         return type;
     }
