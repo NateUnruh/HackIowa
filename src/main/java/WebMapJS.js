@@ -1,3 +1,11 @@
+/*
+ * Name: Addison Armstrong, Kayla Felderman, Nate Unruh, Ram Sajja
+ * Name of Project: First Aid in Flight
+ * Name of Class: WebMapJS
+ * Description of Class: Back end code of the Webpage
+ */
+
+
 var map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
