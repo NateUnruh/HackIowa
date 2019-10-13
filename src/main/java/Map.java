@@ -1,9 +1,18 @@
+/*
+ * Name: Addison Armstrong, Kayla Felderman, Nate Unruh, Ram Sajja
+ * Name of Project: First Aid in Flight
+ * Name of Class: Map
+ * Description of Class: This class contains the Map Back End
+ */
+
+// Importing all Google and MapBox APIs
 import com.google.maps.GeoApiContext;
 import com.google.maps.StaticMapsRequest;
 import com.google.maps.errors.ApiException;
 import com.google.maps.model.LatLng;
 import com.mapbox.geojson.Point;
 
+// Importing all Java Classes
 import javax.swing.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,6 +21,9 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+//Creating Map Class
+/**This Class Contains the Map Back End*/
 public class Map {
 
     // Google Maps APIkey
