@@ -57,7 +57,6 @@ public class MedPack
         }
     }
 
-
     public int getPackageNum() {
         return packageNum;
     }
