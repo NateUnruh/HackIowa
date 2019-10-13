@@ -1,3 +1,11 @@
+
+import com.google.maps.GeoApiContext;
+import com.google.maps.GeocodingApi;
+import com.google.maps.GeocodingApiRequest;
+import com.google.maps.errors.ApiException;
+import com.google.maps.model.GeocodingResult;
+import com.google.maps.model.LatLng;
+
 /*
  * Name: Addison Armstrong, Kayla Felderman, Nate Unruh, Ram Sajja
  * Name of Project: First Aid in Flight
@@ -13,24 +21,29 @@ import com.mapbox.geojson.Point;
 import com.mapbox.turf.TurfConstants;
 import com.mapbox.turf.TurfMeasurement;
 
+
+import java.io.IOException;
+
 // Importing Java ArrayList to store all drones
+
 import java.util.ArrayList;
 
 //Creating Drone Class
 /** Drone Class that stores important information about Drone*/
 public class Drone{
 
-    // Private variables of Drone
-    private double mph = 30.0; // Measured in mph
-    private Point homeCoords; // Where the Drone's Station is
-    private Point coords;   // Where the Drone is directed to go
-    private double batteryRange; // Measured in miles
-    private double batteryLife; // Measured in miles
-    private MedPack medPack = new MedPack(0); // MedPack that the Drone is carrying
-    private boolean home = false; // If the Drone is Home
-    private double maxPayLoad = 5000; //Measured in Grams
-    private final Point LeftBot = Point.fromLngLat( -91.611807, 41.629109); //Left Bottom Corner of Boundary Box
-    private final Point RightTop = Point.fromLngLat( -91.462394, 41.693394); //Right Top Corner of Boundary Box
+    private static final String APIkey =  "AIzaSyDZ-Kk-itsqd04Z5hJtmndjlYa1teL170s";
+    private double mph = 30.0; // in mph
+    private Point homeCoords;
+    private Point coords;
+    private double batteryRange; // in miles
+    private double batteryLife; // in miles
+    private MedPack medPack = new MedPack(0);
+    private boolean home = false; // is it home?
+    private double maxPayLoad = 5; //measured in pounds
+    private final Point LeftBot = Point.fromLngLat( -91.611807, 41.629109); //Left Bottom Corner of Box
+    private final Point RightTop = Point.fromLngLat( -91.462394, 41.693394); //Right Top Corner of Box
+
 
     // Constructor of Drone Class
     Drone(Point homeCoords, double mph, double batteryRange, double maxPayLoad){
@@ -104,7 +117,17 @@ public class Drone{
         this.home = home;
     }
 
+    public void setMaxPayLoad(double maxPayLoad) {
+        this.maxPayLoad = maxPayLoad;
+    }
+
+    public String getAddresss() throws InterruptedException, ApiException, IOException {
+        GeocodingResult[] results = GeocodingApi.newRequest(new GeoApiContext.Builder().apiKey(APIkey).build()).latlng(new LatLng(coords.longitude(),coords.latitude())).await();
+        return results[0].formattedAddress;
+    }
+
     // Move Function to send Drone to destination
+
     public void move(Point dest){
         home = false;
         batteryLife -= distanceTo(dest);
@@ -112,11 +135,13 @@ public class Drone{
     }
 
     //testing main
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException, ApiException, IOException {
+    //        Drone d = new Drone(Point.fromLngLat(-91.532788,41.651897),new MedPack(2));
         DroneForce Array = new DroneForce();
         ArrayList<Drone> ArrayList = Array.getDronesList();
         for(Drone drone : ArrayList) {
             System.out.println(drone.timeToArrival(Point.fromLngLat(-91.5192, 41.6765)));
         }
+        System.out.println(ArrayList.get(0).getAddresss());
     }
 }

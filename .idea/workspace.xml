@@ -9,12 +9,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Drone.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Drone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/MedPack$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/MedPack$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/MedPack$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/MedPack$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/PatientRequestGoogleAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/PatientRequestGoogleAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Drone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/DroneForce.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/DroneRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Map.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/MedPack.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/MedPack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/PatientRequest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/PatientRequest$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/PatientRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/PatientRequestGoogleAPI.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Drone.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -376,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570983779606</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Google API &gt;&gt; Mapbox API">
+      <created>1570985168313</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1570985168313</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
