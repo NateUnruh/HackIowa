@@ -48,9 +48,13 @@ public class PatientRequestGoogleAPI {
         return location;
     }
 
+    public int getType(){
+        return type;
+    }
+
 
 
     public static void main (String [] args) throws InterruptedException, ApiException, IOException {
-        PatientRequestGoogleAPI p = new PatientRequestGoogleAPI("1600 West Pennsylvania Avenue");
+        PatientRequestGoogleAPI p = new PatientRequestGoogleAPI("707 S Dubuque St Iowa City");
     }
 }
