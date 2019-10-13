@@ -2,6 +2,7 @@ import com.google.maps.GeoApiContext;
 import com.google.maps.StaticMapsRequest;
 import com.google.maps.errors.ApiException;
 import com.google.maps.model.LatLng;
+import com.mapbox.geojson.Point;
 
 import javax.swing.*;
 import java.io.FileOutputStream;
@@ -29,12 +30,22 @@ public class Map {
         return drones.closestDrone(p.getLocation());
     }
 
+    public StaticMapsRequest getMap(String loc) throws InterruptedException, ApiException, IOException {
+        PatientRequestGoogleAPI p = new PatientRequestGoogleAPI(loc);
+        Point droneLoc = drones.closestDrone(p.getLocation()).getCoords();
+        StaticMapsRequest z = new StaticMapsRequest(new GeoApiContext.Builder().apiKey(APIkey).build()).size(new com.google.maps.model.Size(5,5));
+        z.center(new LatLng(patients.get(0).getLocation().latitude(),patients.get(0).getLocation().longitude()));
+        return z;
+
+    }
+
     public static void main(String[] args) throws InterruptedException, ApiException, IOException {
         Map m = new Map();
         Drone d = m.addPatient("707 S Dubuque St Iowa City, IA");
         System.out.println(d.getCoords().longitude() + " " + d.getCoords().latitude());
         StaticMapsRequest z = new StaticMapsRequest(new GeoApiContext.Builder().apiKey(APIkey).build()).size(new com.google.maps.model.Size(5,5));
         z.center(new LatLng(m.patients.get(0).getLocation().latitude(),m.patients.get(0).getLocation().longitude()));
+
         System.out.println(z.toString());
         JFrame test = new JFrame("Google Maps");
 
