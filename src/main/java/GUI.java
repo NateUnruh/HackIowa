@@ -60,8 +60,17 @@ public class GUI extends JFrame {
                     e.printStackTrace();
                 }
                     TOaddress.setText("To: " + Location.getText() +"     ");
-                    Fromaddress.setText("Drone sent From: " + "");
-                    ETA.setText("ETA: " + address.timeToArrival(Closest.closestDrone(address.getLocation())));
+                try {
+                    Fromaddress.setText("Drone sent From: " + Closest.closestDrone(address.getLocation()).getAddresss());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ApiException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                double time = address.timeToArrival(Closest.closestDrone(address.getLocation()));
+                ETA.setText("ETA: " + (int)time +" mins " + (int)((time-(int)time)*60) + " sec" );
                     Send.setEnabled(false);
                     Location.setEnabled(false);
                     PackType.setEnabled(false);
