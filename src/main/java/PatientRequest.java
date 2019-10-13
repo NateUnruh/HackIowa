@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 public class PatientRequest {
+    public static DroneRequest drones = new DroneRequest(Point.fromLngLat(0,0),Point.fromLngLat(10,10), 10);
     private Point location;
     private int type;
 
@@ -39,7 +40,9 @@ public class PatientRequest {
 
                     // Log the first results Point.
                     Point firstResultPoint = results.get(0).center();
-                    location = Point.fromLngLat(firstResultPoint.longitude(),firstResultPoint.latitude());
+                    System.out.println(firstResultPoint.coordinates());
+                    drones.closestDrone(firstResultPoint).move(firstResultPoint);
+
 
                 } else {
 
@@ -109,6 +112,9 @@ public class PatientRequest {
     public static void main(String[] args){
         PatientRequest p = new PatientRequest("707 S Dubuque St Iowa City, IA");
         System.out.println(p.getLocation());
+        for(Drone i : p.drones.getDronesList()){
+            System.out.println(i.getCoords() + " Battery life: " + i.getBatteryLife());
+        }
     }
 
 }

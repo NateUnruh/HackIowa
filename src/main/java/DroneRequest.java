@@ -21,7 +21,7 @@ public class DroneRequest extends DroneForce{
     }
 
     // TODO: Add medpack validation
-    private Drone closestDrone(Point dest){
+    public Drone closestDrone(Point dest){
         double time = Double.MAX_VALUE;
         Drone closest = null;
         for(Drone i : Drones){
