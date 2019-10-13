@@ -25,9 +25,9 @@ public class MedPack
     private final static ArrayList<PackItem> pack0Items = new ArrayList<PackItem>(){
         {
             add(new PackItem("AED", 2267.96, 1298)); // https://www.amazon.com/Philips-HeartStart-Home-Defibrillator-Carry/dp/B00064CED6/ref=sr_1_5?keywords=AED&qid=1570931296&sr=8-5
-            add(new PackItem("EpiPen",50,650)); // https://www.drugs.com/article/epipen-cost-alternatives.html +
-            add(new PackItem("Inhaler", 50,380)); // https://www.goodrx.com/blog/heres-why-asthma-inhalers-are-so-expensive/ +
-            add(new PackItem("cprMask",141.748,9)); // https://www.amazon.com/CPR-Mask-Bonus-keychain-One-Way/dp/B074BH9MRJ/ref=sr_1_3?keywords=cpr+mask&qid=1570931692&sr=8-3
+            add(new PackItem("EpiPen",100,650)); // https://www.drugs.com/article/epipen-cost-alternatives.html +
+            add(new PackItem("Inhaler", 100,380)); // https://www.goodrx.com/blog/heres-why-asthma-inhalers-are-so-expensive/ +
+            add(new PackItem("CPR Mask",141.748,9)); // https://www.amazon.com/CPR-Mask-Bonus-keychain-One-Way/dp/B074BH9MRJ/ref=sr_1_3?keywords=cpr+mask&qid=1570931692&sr=8-3
         }
     };
 
