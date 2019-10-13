@@ -37,8 +37,13 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function yesClick() {
     //call PatientRequest with location
+    //probably not doing anything
+    //java.PatientRequest = new java.PatientRequest(map.center);
+    //console.log(java.PatientRequest);
+    alert("Your Help is on the way! Hold it there.");
 }
 
 function noClick() {
     //prompt user input
+
 }

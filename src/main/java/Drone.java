@@ -1,11 +1,3 @@
-
-import com.google.maps.GeoApiContext;
-import com.google.maps.GeocodingApi;
-import com.google.maps.GeocodingApiRequest;
-import com.google.maps.errors.ApiException;
-import com.google.maps.model.GeocodingResult;
-import com.google.maps.model.LatLng;
-
 /*
  * Name: Addison Armstrong, Kayla Felderman, Nate Unruh, Ram Sajja
  * Name of Project: First Aid in Flight
@@ -20,6 +12,12 @@ import com.google.maps.model.LatLng;
 import com.mapbox.geojson.Point;
 import com.mapbox.turf.TurfConstants;
 import com.mapbox.turf.TurfMeasurement;
+import com.google.maps.GeoApiContext;
+import com.google.maps.GeocodingApi;
+import com.google.maps.GeocodingApiRequest;
+import com.google.maps.errors.ApiException;
+import com.google.maps.model.GeocodingResult;
+import com.google.maps.model.LatLng;
 
 
 import java.io.IOException;
@@ -117,17 +115,19 @@ public class Drone{
         this.home = home;
     }
 
+    // Setter of MaxPayLoad
     public void setMaxPayLoad(double maxPayLoad) {
         this.maxPayLoad = maxPayLoad;
     }
 
+    // Gets Address of Destination
     public String getAddresss() throws InterruptedException, ApiException, IOException {
         GeocodingResult[] results = GeocodingApi.newRequest(new GeoApiContext.Builder().apiKey(APIkey).build()).latlng(new LatLng(coords.longitude(),coords.latitude())).await();
         return results[0].formattedAddress;
     }
 
-    // Move Function to send Drone to destination
 
+    // Move Function to send Drone to destination
     public void move(Point dest){
         home = false;
         batteryLife -= distanceTo(dest);
@@ -136,7 +136,6 @@ public class Drone{
 
     //testing main
     public static void main(String[] args) throws InterruptedException, ApiException, IOException {
-    //        Drone d = new Drone(Point.fromLngLat(-91.532788,41.651897),new MedPack(2));
         DroneForce Array = new DroneForce();
         ArrayList<Drone> ArrayList = Array.getDronesList();
         for(Drone drone : ArrayList) {
