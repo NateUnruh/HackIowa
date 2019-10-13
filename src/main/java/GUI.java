@@ -1,3 +1,11 @@
+/*
+ * Name: Addison Armstrong, Kayla Felderman, Nate Unruh, Ram Sajja
+ * Name of Project: First Aid in Flight
+ * Name of Class: GUI
+ * Description of Class: This class is used to implement the Emergency request through the GUI application.
+ * this is used to show the visuals from the JVM to the users of the software
+ */
+
 import com.google.maps.errors.ApiException;
 
 import javax.swing.*;
@@ -8,18 +16,23 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
 
-public class GUI extends JFrame {
-    private DroneRequest Closest;
-    private JLabel label1;
-    private JLabel label2;
-    private JTextField Location;
-    private JComboBox PackType;
-    private JButton Send;
-    private JPanel panel;
-    private JLabel TOaddress;
-    private JLabel Fromaddress;
-    private JLabel ETA;
 
+//This class is used to implement the Emergency request through the application
+public class GUI extends JFrame {
+    private DroneRequest Closest; //this holds the closest drone
+    private JLabel label1; // this holds the label for location
+    private JLabel label2; //this holds the Pack type
+    private JTextField Location; // This gets the location from the user
+    private JComboBox PackType; // this gets what pack the user chose
+    private JButton Send; // to request help
+    private JPanel panel; // the panel to hold all the GUI components
+    private JLabel TOaddress; // the address to which the user requested help to
+    private JLabel Fromaddress; // the address from where we are sending the drone from
+    private JLabel ETA; // the estimated time for the drone to reach out to the user
+
+    /*
+    This is where we build the GUI to get the users input to request the drones
+     */
     public GUI(){
         setTitle("HELP!!!!");
         setVisible(true);
@@ -44,6 +57,9 @@ public class GUI extends JFrame {
         panel.add(ETA);
 
         Send.addActionListener(new ActionListener() {
+            /*
+            This is where we are making sure if the user actually pressed the button to request help. and taking appropriate actions to help out the person in need.
+             */
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 JOptionPane.showMessageDialog(null,"Your Help is on the way! Hang in there",null,JOptionPane.PLAIN_MESSAGE);
@@ -81,6 +97,9 @@ public class GUI extends JFrame {
         add(panel);
     }
 
+/*
+Used to create the GUI for the application.
+ */
     public static void main(String[] args) {
         GUI temp = new GUI();
         temp.setSize(400,300);
