@@ -5,13 +5,13 @@ import com.mapbox.turf.TurfMeasurement;
 import java.util.ArrayList;
 
 public class Drone{
-    private double mph = 60.0;
+    private double mph = 30.0; // in mph
     private Point homeCoords;
     private Point coords;
-    private double batteryRange;
-    private double batteryLife;
+    private double batteryRange; // in miles
+    private double batteryLife; // in miles
     private MedPack medPack = new MedPack(0);
-    private boolean home = false;
+    private boolean home = false; // is it home?
     private double maxPayLoad = 5; //measured in pounds
     private final Point LeftBot = Point.fromLngLat( -91.611807, 41.629109); //Left Bottom Corner of Box
     private final Point RightTop = Point.fromLngLat( -91.462394, 41.693394); //Right Top Corner of Box
@@ -24,44 +24,6 @@ public class Drone{
         this.batteryLife = batteryRange;
         this.maxPayLoad = maxPayLoad;
         this.home = true;
-    }
-
-    Drone(Point coords, MedPack medPack){
-        this.homeCoords = coords;
-        this.coords = this.homeCoords;
-        this.medPack = medPack;
-        this.home = true;
-    }
-
-    Drone(Point coords, MedPack medPack, double mph, double maxPayLoad, double operatingTempLow, double operatingTempHigh, double batteryRange){
-        this.coords = coords;
-        this.medPack = medPack;
-        this.home = true;
-        this.mph = mph;
-        this.maxPayLoad = maxPayLoad;
-        this.batteryRange = batteryRange;
-        this.batteryLife = batteryRange;
-    }
-
-    public Drone(double mph, Point homeCoords, double batteryRange, MedPack medPack) {
-        this.mph = mph;
-        this.home = true;
-        this.coords = homeCoords;
-        this.homeCoords = homeCoords;
-        this.batteryRange= batteryRange;
-        this.batteryLife = batteryRange;
-        this.medPack = medPack;
-    }
-
-    public Drone(double mph, Point homeCoords, double batteryRange){
-        this.mph = mph;
-        this.home = true;
-        this.coords = homeCoords;
-        this.homeCoords = homeCoords;
-        this.batteryRange = batteryRange;
-        this.batteryLife = batteryRange;
-
-
     }
 
     // TODO: Change to call coords
