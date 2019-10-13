@@ -5,6 +5,7 @@ public class MedPack
     private int packageNum;
     private ArrayList<PackItem> contents;
 
+
     private final static ArrayList<PackItem> pack1Items = new ArrayList<PackItem>(){
         {
             //possible pack items with approximate price and weight
