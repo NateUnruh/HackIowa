@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class PatientRequestGoogleAPI {
 
-    private static String APIkey = "AIzaSyDZ-Kk-itsqd04Z5hJtmndjlYa1teL170s\n";
+    private static String APIkey = "AIzaSyDZ-Kk-itsqd04Z5hJtmndjlYa1teL170s";
     private Point location;
     private int type;
     PatientRequestGoogleAPI(String loc) throws InterruptedException, ApiException, IOException {

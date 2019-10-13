@@ -10,7 +10,7 @@ public class DroneRequest extends DroneForce{
 
     private Point leftBot;
     private Point rightTop;
-    DroneRequest(Point leftBot, Point rightTop, int numDrones){
+    DroneRequest(){
         Drones = new DroneForce().getDronesList();
         // Drones.add(DroneForce.AmazonAirPrime);
 //        for(int i = 0; i < numDrones; i++){
@@ -74,7 +74,7 @@ public class DroneRequest extends DroneForce{
         Point dest = Point.fromLngLat(-91.55,41.65);
         PatientRequest request = new PatientRequest(dest,0);
 
-        DroneRequest d = new DroneRequest(Point.fromLngLat(0,0),Point.fromLngLat(10,10), 10);
+        DroneRequest d = new DroneRequest();
         for(Drone i : d.Drones){
             System.out.println(i.getCoords() + " Distance: " + i.distanceTo(request.getLocation()) + " Type of medPack: " + i.getMedPack().getPackageNum());
         }

@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 public class PatientRequest {
-    public static DroneRequest drones = new DroneRequest(Point.fromLngLat(0,0),Point.fromLngLat(10,10), 10);
+    public static DroneRequest drones = new DroneRequest();
     private Point location;
     private int type;
 

@@ -8,20 +8,20 @@ public class DroneForce {
 
 
     public DroneForce(){
-        final Point MercyH = Point.fromLngLat( -91.528365,41.664240);
-        final Point UIowaHCRiverLanding = Point.fromLngLat( -91.564041,41.681955);
-        final Point VAHospital = Point.fromLngLat(-91.547788, 41.663993);
-        final Point UIowaHospital = Point.fromLngLat(-91.548274, 41.658977);
-        final Point UHeightsPolice = Point.fromLngLat( -91.559997,41.655997);
-        final Point FireStation2 = Point.fromLngLat( -91.564856, 41.655364);
-        final Point CareAmbulance = Point.fromLngLat(-91.541433,41.640012);
-        final Point ICPoliceSubstation = Point.fromLngLat(-91.521152, 41.640712);
-        final Point FireStation3 = Point.fromLngLat( -91.505735, 41.640929);
-        final Point JohnsonAmbulance = Point.fromLngLat( -91.532835, 41.651773);
-        final Point JohnsonSherriffsOffice = Point.fromLngLat(-91.53640, 41.654967);
-        final Point UIowaPolice = Point.fromLngLat( -91.535923, 41.658638);
-        final Point ICPolice = Point.fromLngLat( -91.529752, 41.660262);
-        final Point FireStation4 = Point.fromLngLat( -91.507113, 41.680848);
+        final Point MercyH = Point.fromLngLat(41.664240, -91.528365);
+        final Point UIowaHCRiverLanding = Point.fromLngLat(41.681955, -91.564041);
+        final Point VAHospital = Point.fromLngLat(41.663993,-91.547788);
+        final Point UIowaHospital = Point.fromLngLat(41.658977,-91.548274);
+        final Point UHeightsPolice = Point.fromLngLat(41.655997, -91.559997);
+        final Point FireStation2 = Point.fromLngLat(41.655364, -91.564856);
+        final Point CareAmbulance = Point.fromLngLat(41.640012,-91.541433);
+        final Point ICPoliceSubstation = Point.fromLngLat(41.640712,-91.521152);
+        final Point FireStation3 = Point.fromLngLat(41.640929, -91.505735);
+        final Point JohnsonAmbulance = Point.fromLngLat(41.651773, -91.532835);
+        final Point JohnsonSherriffsOffice = Point.fromLngLat(41.654967,-91.53640);
+        final Point UIowaPolice = Point.fromLngLat( 41.658638,-91.535923);
+        final Point ICPolice = Point.fromLngLat(41.660262, -91.529752);
+        final Point FireStation4 = Point.fromLngLat(41.680848, -91.507113);
         double MatriceMph = 40.0;
         double MatriceBatteryRange = 18.0;
         double MatriceMaxPayLoad = 12.1254;

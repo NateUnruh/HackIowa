@@ -47,6 +47,7 @@ public class GUI extends JFrame {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
                 System.out.println(address.getLocation());
             }
         });
