@@ -14,22 +14,31 @@ import java.util.ArrayList;
 import java.util.List;
 public class Map {
 
+    // Google Maps APIkey
     private static String APIkey = "AIzaSyDZ-Kk-itsqd04Z5hJtmndjlYa1teL170s";
+
+    // ALl drones
     private DroneRequest drones;
     private List<PatientRequestGoogleAPI> patients;
     // Create a GeoJSON point representation of the locations.
+
+
+    // Create a list to store patients, and create list of drones
     Map(){
         drones = new DroneRequest();
         patients = new ArrayList<>();
 
     }
 
+    // add a Patient to list of patients and then returns closest drone
     public Drone addPatient(String loc) throws InterruptedException, ApiException, IOException {
         PatientRequestGoogleAPI p = new PatientRequestGoogleAPI(loc);
         patients.add(p);
         return drones.closestDrone(p.getLocation());
     }
 
+
+    // Get a Map based off location String
     public StaticMapsRequest getMap(String loc) throws InterruptedException, ApiException, IOException {
         PatientRequestGoogleAPI p = new PatientRequestGoogleAPI(loc);
         Point droneLoc = drones.closestDrone(p.getLocation()).getCoords();
@@ -39,6 +48,7 @@ public class Map {
 
     }
 
+    // Used to test, throws error as is
     public static void main(String[] args) throws InterruptedException, ApiException, IOException {
         Map m = new Map();
         Drone d = m.addPatient("707 S Dubuque St Iowa City, IA");
