@@ -1,25 +1,31 @@
+/*
+ * Name: Addison Armstrong, Kayla Felderman, Nate Unruh, Ram Sajja
+ * Name of Project: First Aid in Flight
+ * Name of Class: DroneRequest
+ * Description of Class: This Class tests the Drone Class to make sure that it all working.
+ */
+
+// Importing Mapbox and Google API's
 import com.mapbox.geojson.Point;
 
+// Importing essential Java classes
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+// Creating DroneRequest Class
+/** This Class tests the Drone Class to make sure that it all working. */
 public class DroneRequest extends DroneForce{
 
+    // Creating the List of Drones
     private List<Drone> Drones;
 
-    private Point leftBot;
-    private Point rightTop;
+    // Grabbing the List of Drones from DroneForce
     DroneRequest(){
         Drones = new DroneForce().getDronesList();
-        // Drones.add(DroneForce.AmazonAirPrime);
-//        for(int i = 0; i < numDrones; i++){
-//            double longitude = ThreadLocalRandom.current().nextDouble(leftBot.longitude(),rightTop.longitude());
-//            double latitude = ThreadLocalRandom.current().nextDouble(leftBot.latitude(),rightTop.latitude());
-//            Drones.add(new Drone(60,Point.fromLngLat(longitude,latitude), 1000, new MedPack(ThreadLocalRandom.current().nextInt(0,1+1))));
-//        }
     }
 
+    // Method to find the closest Drone related to the Destination
     // TODO: Add medpack validation
     public Drone closestDrone(Point dest){
         double time = Double.MAX_VALUE;
@@ -67,9 +73,7 @@ public class DroneRequest extends DroneForce{
         return closest;
     }
 
-
-
-    // TODO: Iowa City bounding box
+    // Testing Main Class
     public static void main(String [] args){
         Point dest = Point.fromLngLat(-91.55,41.65);
         PatientRequest request = new PatientRequest(dest,0);
@@ -78,7 +82,6 @@ public class DroneRequest extends DroneForce{
         for(Drone i : d.Drones){
             System.out.println(i.getCoords() + " Distance: " + i.distanceTo(request.getLocation()) + " Type of medPack: " + i.getMedPack().getPackageNum());
         }
-
 
         Drone closest = d.closestDrone(request);
         System.out.println("Closest");
