@@ -2,7 +2,7 @@
  * Name: Addison Armstrong, Kayla Felderman, Nate Unruh, Ram Sajja
  * Name of Project: First Aid in Flight
  * Name of Class: DroneRequest
- * Description of Class: This Class tests the Drone Class to make sure that it all working.
+ * Description of Class: This Class Requests the Drones that are able to make it to the Destination
  */
 
 // Importing Mapbox and Google API's
