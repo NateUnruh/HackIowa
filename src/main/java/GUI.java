@@ -1,5 +1,8 @@
+import com.google.maps.errors.ApiException;
+
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -34,7 +37,16 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 dispose();
                 JOptionPane.showMessageDialog(null,"Your Help is on the way! Hold it there",null,JOptionPane.PLAIN_MESSAGE);
-                PatientRequest address = new PatientRequest(Location.getText());
+                PatientRequestGoogleAPI address = null;
+                try {
+                    address = new PatientRequestGoogleAPI(Location.getText());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ApiException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 System.out.println(address.getLocation());
             }
         });

@@ -11,6 +11,7 @@ import com.google.maps.internal.ApiResponse;
 import com.google.maps.internal.ExceptionsAllowedToRetry;
 import com.google.maps.internal.UrlSigner;
 
+import javax.xml.stream.Location;
 import java.io.IOException;
 
 public class PatientRequestGoogleAPI {
@@ -40,6 +41,11 @@ public class PatientRequestGoogleAPI {
     PatientRequestGoogleAPI(Point point){
         this.location = point;
         this.type = 0;
+    }
+
+    public Point getLocation()
+    {
+        return location;
     }
 
 
