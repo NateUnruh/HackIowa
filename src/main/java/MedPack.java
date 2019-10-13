@@ -1,11 +1,22 @@
+/*
+ * Name: Addison Armstrong, Kayla Felderman, Nate Unruh, Ram Sajja
+ * Name of Project: First Aid in Flight
+ * Name of Class: MedPack
+ * Description of Class: This Class creates all items needed in the Medpacks. Makes the MedPacks too
+ */
+
+// Importing Java Class ArrayList
 import java.util.ArrayList;
 
+// Creating MedPack Class
+/** This Class creates all items needed in the Medpacks. Makes the MedPacks too */
 public class MedPack
 {
+    // Private Variables
     private int packageNum;
     private ArrayList<PackItem> contents;
 
-
+    // Creating MedPack 1
     private final static ArrayList<PackItem> pack1Items = new ArrayList<PackItem>(){
         {
             //possible pack items with approximate price and weight
@@ -22,6 +33,7 @@ public class MedPack
         }
     };
 
+    // Creating MedPack 0
     private final static ArrayList<PackItem> pack0Items = new ArrayList<PackItem>(){
         {
             add(new PackItem("Narcom", 181.437,140)); // https://www.amazon.com/Rescue-Professional-Naloxone-Narcan-Overdose/dp/B072FRZJRB/ref=sr_1_1?keywords=narcon&qid=1570930123&sr=8-1 + https://time.com/5229870/naloxone-surgeon-general-cost-where-buy/
@@ -34,6 +46,7 @@ public class MedPack
 
 
 
+    // Default Constructor of Medpacks
     public MedPack()
     {
         packageNum = 0;
@@ -41,6 +54,7 @@ public class MedPack
         contents.addAll(pack1Items);
     }
 
+    // Constructor of Medpacks with Package Number
     public MedPack(int packageNum)
     {
         this.packageNum = packageNum;
@@ -59,6 +73,7 @@ public class MedPack
         }
     }
 
+    // Get the Medpack Package Number
     public int getPackageNum() {
         return packageNum;
     }
