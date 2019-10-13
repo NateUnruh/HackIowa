@@ -13,8 +13,8 @@ public class Drone{
     private MedPack medPack = new MedPack(0);
     private boolean home = false;
     private double maxPayLoad = 5; //measured in pounds
-    private final Point LeftBot = Point.fromLngLat(41.629109, -91.611807); //Left Bottom Corner of Box
-    private final Point RightTop = Point.fromLngLat(41.693394, -91.462394); //Right Top Corner of Box
+    private final Point LeftBot = Point.fromLngLat( -91.611807, 41.629109); //Left Bottom Corner of Box
+    private final Point RightTop = Point.fromLngLat( -91.462394, 41.693394); //Right Top Corner of Box
 
     Drone(Point homeCoords, double mph, double batteryRange, double maxPayLoad){
         this.homeCoords = homeCoords;
@@ -39,8 +39,6 @@ public class Drone{
         this.home = true;
         this.mph = mph;
         this.maxPayLoad = maxPayLoad;
-//        this.operatingTempLow = operatingTempLow;
-//        this.operatingTempHigh = operatingTempHigh;
         this.batteryRange = batteryRange;
         this.batteryLife = batteryRange;
     }
@@ -84,14 +82,6 @@ public class Drone{
     public double getMaxPayLoad() {
         return maxPayLoad;
     }
-
-//    public double getOperatingTempLow() {
-//        return operatingTempLow;
-//    }
-//
-//    public double getOperatingTempHigh() {
-//        return operatingTempHigh;
-//    }
 
     public double getMph() {
         return mph;
@@ -141,15 +131,6 @@ public class Drone{
         this.maxPayLoad = maxPayLoad;
     }
 
-//    public void setOperatingTempLow(double operatingTempLow) {
-//        this.operatingTempLow = operatingTempLow;
-//    }
-//
-//    public void setOperatingTempHigh(double operatingTempHigh) {
-//        this.operatingTempHigh = operatingTempHigh;
-//    }
-
-    //
     public void move(Point dest){
         home = false;
         batteryLife -= distanceTo(dest);
