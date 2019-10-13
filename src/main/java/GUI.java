@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.JOptionPane;
 
 
-//This class is used to implement the Emergency request through the application
+//This class is used to implement the Emergency request through the application using JFrame
 public class GUI extends JFrame {
     private DroneRequest Closest; //this holds the closest drone
     private JLabel label1; // this holds the label for location
